@@ -17,7 +17,7 @@
 
     <script src="./shared/scripts/config.js"></script>
     <script src="./shared/scripts/api.js"></script>
-    <script src="./shared/scripts/redirect.js"></script> 
+    <script src="./shared/scripts/redirect.js"></script>
     <script src="./shared/scripts/ui_helper.js"></script>
     <script src="./shared/scripts/form_helper.js"></script>
 
@@ -48,29 +48,40 @@
                 <form onsubmit="logInSubmit(event)" class="std_form d_flex_cs_gl f_d_c">
                     <div class="form_group">
                         <label for="username">Benutzername</label>
-                        <input onkeydown="hideFormErrors(['error_pw'])" placeholder="Benutzer" class="input_field" type="text" id="username" name="username"  required>
+                        <input onkeydown="hideFormErrors(['error_pw'])" placeholder="Benutzer" class="input_field"
+                            type="text" id="username" name="username" required>
                     </div>
                     <div class="form_group">
                         <label for="password">Passwort</label>
-                        <input onkeydown="hideFormErrors(['error_pw'])" placeholder="Passwort" class="input_field" type="password" id="password" name="password"  required>
+                        <input onkeydown="hideFormErrors(['error_pw'])" placeholder="Passwort" class="input_field"
+                            type="password" id="password" name="password" required>
                     </div>
                     <p id="error_pw" class="form_error d_none">Benutzer oder Passwort falsch</p>
                     <div class="d_flex_cc_gl f_d_r_resp_c w_full">
                         <p>Du hast noch kein Konto?</p>
                         <a href="./registration.html" class="link d_flex_cc_gm">
-                            Hier registrieren 
+                            Hier registrieren
+                            <img src="./assets/icons/arrow_forward.svg" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="d_flex_cc_gl f_d_r_resp_c w_full">
+                        <p>Passwort vergessen?</p>
+                        <a href="./forgot-password.html" class="link d_flex_cc_gm">
+                            Hier anfordern
                             <img src="./assets/icons/arrow_forward.svg" alt="" srcset="">
                         </a>
                     </div>
                     <div class="d_flex_cc_gl f_d_r_resp_c w_full">
                         <button type="submit" class="std_btn btn_prime pad_s">Anmelden</button>
-                        <button type="button" onclick="openDialog('guest_login_dialog')" class="std_btn btn_secondary pad_s">Gäste-Login</button>
+                        <button type="button" onclick="openDialog('guest_login_dialog')"
+                            class="std_btn btn_secondary pad_s">Gäste-Login</button>
                     </div>
                 </form>
-                
+
             </div>
         </section>
-        <section onclick="closeDialog('guest_login_dialog')" id="guest_login_dialog" class="dialog pad_m d_flex_cc_gm d_none">
+        <section onclick="closeDialog('guest_login_dialog')" id="guest_login_dialog"
+            class="dialog pad_m d_flex_cc_gm d_none">
             <div onclick="stopProp(event)" class="m_auto small_form d_flex_cs_gl f_d_c">
 
                 <h2 class="font_prime_color">Wähle einen Gastzugang</h2>
@@ -82,7 +93,9 @@
                             <li>Angebote erstellen</li>
                             <li>Bestellungen bearbeiten</li>
                         </ul>
-                        <button onclick="guestLogin('business')" class="login_btn std_btn btn_prime pad_s d_flex_cc_gm"><img src="./assets/icons/arrow_forward.svg" alt="" srcset=""> Login</button>
+                        <button onclick="guestLogin('business')"
+                            class="login_btn std_btn btn_prime pad_s d_flex_cc_gm"><img
+                                src="./assets/icons/arrow_forward.svg" alt="" srcset=""> Login</button>
                     </div>
                     <div class="card d_flex_cc_gl f_d_c ">
                         <h3 class="font_prime_color">Demo-Kunde</h3>
@@ -91,14 +104,16 @@
                             <li>Rieviews erstellen</li>
                             <li>Bestellungen aufgeben</li>
                         </ul>
-                        <button onclick="guestLogin('customer')" class="login_btn std_btn btn_prime pad_s d_flex_cc_gm"><img src="./assets/icons/arrow_forward.svg" alt="" srcset=""> Login</button>
+                        <button onclick="guestLogin('customer')"
+                            class="login_btn std_btn btn_prime pad_s d_flex_cc_gm"><img
+                                src="./assets/icons/arrow_forward.svg" alt="" srcset=""> Login</button>
                     </div>
                 </div>
                 <p>Beide können Angebote durchsuchen und andere öffentliche Profile einsehen.</p>
 
             </div>
         </section>
-        
+
     </main>
     <footer class="main_footer pad_l">
         <a class="logo" href="./index.html">
