@@ -1,6 +1,9 @@
-function logOut(){
+function logOut() {
     removeAuthCredentials();
-    window.location.href = "./index.html"
+    showToastMessage(error = false, ['Sie wurden erfolgreich ausgeloggt!']);
+    setTimeout(() => {
+        window.location.href = "./index.html"
+    }, 2000);
 }
 
 async function logIn(formData) {
@@ -15,8 +18,8 @@ async function logIn(formData) {
 
 async function registration(data) {
 
-    let response = await postDataWJSON(REGISTER_URL, data); 
-    if(!response.ok){
+    let response = await postDataWJSON(REGISTER_URL, data);
+    if (!response.ok) {
         let errorArr = extractErrorMessages(response.data)
         showToastMessage(true, errorArr)
     } else {

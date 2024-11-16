@@ -28,6 +28,21 @@ async function loadRenderSingleOffer() {
         (error = true),
         (msg = ["Das Angebot konnte nicht gefunden werden"])
       );
+        let offerResp = await setSingleOffer(profileId);
+        if (offerResp.ok) {
+            console.log(currentSingleOffer);
+            
+            console.log(currentSingleOffer.user);
+            
+            await loadSingleOfferUser(currentSingleOffer.user);
+            await setSingleOfferCount(currentSingleOffer.user);
+            await loadRenderSingleOfferReviews();
+            document.getElementById('single_offer_header_section').innerHTML = getsingleOfferHeaderTemplate();
+
+            renderSingleOfferDetail('basic');
+        } else {
+            showToastMessage(error = true, msg = ['Das Angebot konnte nicht gefunden werden'])
+        }
     }
   }
 }
