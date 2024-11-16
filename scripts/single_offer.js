@@ -17,6 +17,10 @@ async function loadRenderSingleOffer() {
     } else {
         let offerResp = await setSingleOffer(profileId);
         if (offerResp.ok) {
+            console.log(currentSingleOffer);
+            
+            console.log(currentSingleOffer.user);
+            
             await loadSingleOfferUser(currentSingleOffer.user);
             await setSingleOfferCount(currentSingleOffer.user);
             await loadRenderSingleOfferReviews();
