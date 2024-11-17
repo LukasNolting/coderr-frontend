@@ -22,7 +22,7 @@ async function renderPage() {
 
     let contentRef = document.getElementById("content");
     if (currentUser.type == "business") {
-        currentBusinessOfferListFilter.creator_id = currentUser.user
+        currentBusinessOfferListFilter.creator_id = currentUser.id
         await setOffers(currentBusinessOfferListFilter)
         contentRef.innerHTML = getBusinessProfilePageTemplate(currentUser, currentOrders, currentOffers, currentReviews);
     } else if (currentUser.type == "customer") {
