@@ -41,13 +41,13 @@
 
     <main class="d_flex_cc_gm" onload="setHeader()">
         <img class="registration_img" src="./assets/img/registration_img.png" alt="" srcset="">
-        <section class="small_form std_form d_flex_cc_gm f_d_c">
+        <section class="small_form std_form d_flex_cc_gm f_d_c" id="registration-container">
             <h1 class="font_prime_color">Neues Konto erstellen</h1>
             <form onsubmit="registerSubmit(event); " class="std_form d_flex_cs_gl f_d_c">
 
                 <div class="form_group">
-                    <label for="username">Benutzername</label>
-                    <input value="" placeholder="beispielname" type="text" id="username" name="username" class="input_field" autocomplete="off"
+                    <label for="username">Benutzername:</label>
+                    <input value="" placeholder="Benutzername" type="text" id="username" name="username" class="input_field" autocomplete="off"
                         required>
                 </div>
                 <div class="form_group">
@@ -65,6 +65,8 @@
                     <input value="" placeholder="Passwort" type="password" id="repeated_password" name="repeated_password"
                         class="input_field" required>
                 </div>
+                <div class="registration-form-g16">
+                    <label>Kontoart:</label>
                 <div class="d_flex_cs_gl">
                     <div class="form_group d_flex_cc_gm">
                         <input type="radio" name="type" id="business" value="business" required>
@@ -74,6 +76,7 @@
                         <input type="radio" name="type" id="customer" value="customer" required>
                         <label for="customer">Kunde</label>
                     </div>
+                </div>
                 </div>
 
                 </div>
