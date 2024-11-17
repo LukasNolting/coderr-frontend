@@ -1,6 +1,6 @@
 function logOut() {
     removeAuthCredentials();
-    showToastMessage(error = false, ['Sie wurden erfolgreich ausgeloggt!']);
+    showToastMessage(error = false, ['Du wurdest erfolgreich ausgeloggt!']);
     setTimeout(() => {
         window.location.href = "./index.html"
     }, 2000);
@@ -23,8 +23,9 @@ async function registration(data) {
         let errorArr = extractErrorMessages(response.data)
         showToastMessage(true, errorArr)
     } else {
-        setAuthCredentials(response.data.token, response.data.user_id, response.data.username)
-        window.location.href = "./offer_list.html"
+        successRegistration();
+        // setAuthCredentials(response.data.token, response.data.user_id, response.data.username)
+        // window.location.href = "./offer_list.html"
     }
 }
 

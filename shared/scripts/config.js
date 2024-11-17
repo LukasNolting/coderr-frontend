@@ -17,6 +17,8 @@ const LOGIN_URL = 'login/';
 
 const REGISTER_URL = 'registration/';
 
+const PASSWORD_RESET_URL = 'password-reset/';
+
 const PROFILE_URL = 'profile/';
 
 const BUSINESS_PROFILES_URL = 'profiles/business/';
