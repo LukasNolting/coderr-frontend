@@ -17,7 +17,6 @@ async function onSubmit(event) {
   event.preventDefault();
   let email = document.getElementById('email').value;
   await forgotPassword(email);
-      
 }
 
 async function forgotPassword(email) {
