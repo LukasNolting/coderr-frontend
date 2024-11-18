@@ -196,9 +196,9 @@ function getOfferDetailDialogTemplateList() {
 }
 
 function getOfferDetailDialogTemplate(detail) {
-    if (!detail || typeof detail !== 'object' || !detail.offer_type || !detail.title || !detail.price || !detail.delivery_time_in_days) {
-        return '<p>Fehler beim Laden der Angebotsdetails</p>';
-    }
+    // if (!detail || typeof detail !== 'object' || !detail.offer_type || !detail.title || !detail.price || !detail.delivery_time_in_days) {
+    //     return '<p>Fehler beim Laden der Angebotsdetails</p>';
+    // }
 
     let checked = detail.revisions == -1 ? "checked" : "";
     let revisionsCount = detail.revisions <= 0 ? 0 : detail.revisions;

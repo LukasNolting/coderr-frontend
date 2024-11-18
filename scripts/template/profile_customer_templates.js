@@ -9,7 +9,7 @@ function getCustomerProfilePageTemplate() {
             <section class="section_group_w_border d_flex_cs_gm f_d_c ">
                 <h2 class="font_prime_color">Meine Aufträge</h2>
                 <ul class="order_list d_flex_cc_gm f_d_c">
-                    <!-- $ {getCustomerOrderTemplateList()} #### TODO: LEERZEICHEN ENTFERNEN!!!! #### -->
+                    ${getCustomerOrderTemplateList()}
                     <!-- LIST getCustomerOrderTemplate  -->
                 </ul>
             </section>
