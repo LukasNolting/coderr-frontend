@@ -44,8 +44,11 @@ function getReviewWLinkTemplate(review, business_user, reviewer) {
 
 
 function getReviewWLinkEditableTemplateList(reviews) {
-    if (!Array.isArray(reviews) || reviews.length === 0) {
-        return '<p>Fehler beim Laden der bearbeitbaren Bewertungen</p>';
+    if (!Array.isArray(reviews)) {
+        return '<p>Fehler beim Laden der Bewertungen</p>';
+    }
+    if (reviews.length === 0) {
+        return '<p>Es existieren noch keine Bewertungen</p>';
     }
     let reviewListHTML = "";
 

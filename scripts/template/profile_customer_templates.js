@@ -121,7 +121,7 @@ function getCustomerDialogFormTemplate() {
                             class="d_flex_cc_gl btn_round_l btn_edit abs_pos_edit_btn_m">
                             <img src="./assets/icons/close_black.svg" alt="">
                         </button>
-                        <h2 class="font_prime_color">Profil editieren</h2>
+                        <h2 class="font_prime_color p_top_s">Profil editieren</h2>
 
                         <div class="image_input_box">
                             <img id="customer_profile_img_input_output" class="profile_img_l" src="${getPersonImgPath(currentUser.file)}" alt="Aktuelles Angebotsbild">
@@ -202,6 +202,7 @@ function getCustomerOrderTemplate(order) {
                                     ${getOrderFeatureListTemplate(order.features)}
                                 </ul>
                             </div>
+                            <hr>
                         </div>
                     </li>
     `

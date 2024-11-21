@@ -1,10 +1,10 @@
-function getsingleOfferHeaderTemplate(){
+function getsingleOfferHeaderTemplate() {
     if (!currentSingleOfferUser) {
         return `<div>Es ist ein Fehler aufgetreten</div>`;
     }
     return `
                     <div class="d_flex_cc_gl f_d_r_resp_c">
-                        <img class="profile_img_l" src="${getPersonImgPath(currentSingleOfferUser.file)}" alt="Profilbild">
+                        <img class="profile_img_l c_pointer" onclick="redirectToCustomerProfile(${currentSingleOfferUser.user})" src="${getPersonImgPath(currentSingleOfferUser.file)}" alt="Profilbild">
                         <div class="d_flex_cs_gm f_d_c ">
                             <div class="d_flex_cs_gm f_d_r_resp_c">
                                 <h3 class="link c_black" onclick="redirectToCustomerProfile(${currentSingleOfferUser.user})">${currentSingleOfferUser.first_name} ${currentSingleOfferUser.last_name}</h3>
@@ -30,10 +30,12 @@ function getsingleOfferHeaderTemplate(){
 }
 
 
-function getSingleOfferDetailTemplate(){
+function getSingleOfferDetailTemplate() {
     if (!currentOpenedDetail) {
         return `<div>Es ist ein Fehler aufgetreten</div>`;
     }
+
+
     return `
         <h3 class="font_prime_color">${currentOpenedDetail.price} €</h3>
                         <h3>${currentOpenedDetail.title}</h3>
@@ -49,12 +51,24 @@ function getSingleOfferDetailTemplate(){
                         <ul class="feature_list">
                             ${getFeatureListTemplate()}
                         </ul>
-
-                        <button onclick="openDialog('order_dialog')" class="std_btn btn_prime pad_s">Bestellen</button>
+    	                ${getOrderBtnTemplate()}
     `
 }
 
-function getFeatureListTemplate(){
+function getOrderBtnTemplate() {
+    if (currentUser.type == "business") {
+        return `
+                        <div >
+                            <button onclick="openDialog('offer_orderbtn_error')" class="std_btn std_btn_disabled btn_prime pad_s">Bestellen</button>
+                            
+                        </div>
+        `
+    } else {
+        return `<button onclick="openDialog('order_dialog')" class="std_btn btn_prime pad_s">Bestellen</button>`
+    }
+}
+
+function getFeatureListTemplate() {
     if (!Array.isArray(currentOpenedDetail.features)) {
         return `<li>Es ist ein Problem aufgetreten</li>`;
     }
@@ -62,24 +76,24 @@ function getFeatureListTemplate(){
         return `<li>Keine Features verfügbar.</li>`;
     }
     let featureList = "";
-    
+
     currentOpenedDetail.features.forEach(feature => {
         featureList += `<li>${feature}</li>`
     });
     return featureList
 }
 
-function getRevisionTemplate(){
-    if(currentOpenedDetail.revisions == -1){
+function getRevisionTemplate() {
+    if (currentOpenedDetail.revisions == -1) {
         return 'Unbegrenzte Revisionen'
-    } else if(currentOpenedDetail.revisions == 1) {
+    } else if (currentOpenedDetail.revisions == 1) {
         return currentOpenedDetail.revisions + ' Revision'
     } else {
         return currentOpenedDetail.revisions + ' Revisionen'
     }
 }
 
-function getShowOrderDialogContentTemplate(){
+function getShowOrderDialogContentTemplate() {
     if (!currentOpenedDetail) {
         return `<div>Es ist ein Fehler aufgetreten</div>`;
     }
@@ -118,7 +132,7 @@ function getShowOrderDialogContentTemplate(){
                     </div>`
 }
 
-function getSendOrderDialogContentTemplate(){
+function getSendOrderDialogContentTemplate() {
     return `<div class="d_flex_cc_gxl f_d_c w_full">
             <img src="./assets/icons/check_circle.svg" alt="" srcset="">
             <h2 class="text_a_c">Erfolgreich Bestellung aufgegeben</h2>

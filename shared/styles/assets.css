@@ -8,6 +8,11 @@
     white-space: nowrap;
 }
 
+.std_btn_disabled{
+    cursor: default !important;
+    background-color: rgb(121, 121, 121) !important;
+}
+
 .btn_prime {
     background-color: var(--btn-prime-color);
     transition: all 0.3s ease;

@@ -27,5 +27,5 @@ async function setCurrentUser() {
         }
         return response;
     }
-    return {ok:false}
+    return { ok: false }
 }

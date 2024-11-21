@@ -104,6 +104,10 @@ input[type=file]::file-selector-button:active {
     background-color: var(--btn-prime-active-color);
 }
 
+textarea {
+    min-height: 120px;
+}
+
 .review_header{
     justify-content: space-between !important;
 }

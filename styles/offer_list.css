@@ -6,7 +6,10 @@
 
 }
 
-
+.nothing_found_img{
+    width: 100%;
+    max-width: 1020px;
+}
 
 .discount_code_group{
     width: 100%;

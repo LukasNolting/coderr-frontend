@@ -18,7 +18,7 @@ async function loadRenderCustomerReviews() {
     document.getElementById('customer_profile_review_list').innerHTML = getReviewWLinkTemplateList(currentReviews);
 }
 
-async function changeReviewFilterCustomerProfile(element){
+async function changeReviewFilterCustomerProfile(element) {
     currentReviewOrdering = element.value;
     loadRenderCustomerReviews()
 }

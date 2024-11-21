@@ -1,5 +1,5 @@
-function getCustomerDetailTemplate(){
-    if (!currentCustomerUser ) {
+function getCustomerDetailTemplate() {
+    if (!currentCustomerUser) {
         return `
             <div>
                 Es ist ein Fehler aufgetreten

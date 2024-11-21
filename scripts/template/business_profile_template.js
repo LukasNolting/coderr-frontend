@@ -1,5 +1,5 @@
-function getBusinessProfileDataTmplate(){
-    if (!currentBusinessUser ) {
+function getBusinessProfileDataTmplate() {
+    if (!currentBusinessUser) {
         return `
             <div>
                 Es ist ein Fehler aufgetreten

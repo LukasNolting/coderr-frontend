@@ -1,5 +1,5 @@
-function getGreetingBoxTemplate(name){
-    if (!name ) {
+function getGreetingBoxTemplate(name) {
+    if (!name) {
         return `
             <div>
                 Es ist ein Fehler aufgetreten

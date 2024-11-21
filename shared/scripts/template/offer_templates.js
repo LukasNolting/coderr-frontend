@@ -13,7 +13,7 @@ function getOfferTemplateList(offers){
 }
 
 function getEmptyOfferListTemplate(){
-    return '<p>Wir konnten keine Angebote finden</p>'
+    return '<p>Es wurden keine Angebote gefunden!</p>'
 }
 
 function getOfferPagination(currentMax, currentPage){

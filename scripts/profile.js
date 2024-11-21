@@ -22,7 +22,7 @@ async function renderPage() {
 
     let contentRef = document.getElementById("content");
     if (currentUser.type == "business") {
-        currentBusinessOfferListFilter.creator_id = currentUser.id
+        currentBusinessOfferListFilter.creator_id = currentUser.user
         await setOffers(currentBusinessOfferListFilter)
         contentRef.innerHTML = getBusinessProfilePageTemplate(currentUser, currentOrders, currentOffers, currentReviews);
     } else if (currentUser.type == "customer") {
@@ -40,12 +40,13 @@ async function goToOfferPage(pageNum) {
 }
 
 async function updateOfferListFilter() {
-    await setOffers(currentBusinessOfferListFilter);    
+    await setOffers(currentBusinessOfferListFilter);
     document.getElementById("business_offer_list").innerHTML = `${getBusinessOfferTemplateList(currentOffers)}
     ${getOfferPagination(calculateNumPages(allOffersLength, PAGE_SIZE), currentBusinessOfferListFilter.page)}`
 }
 
 async function getFullProfileData() {
+
     if (currentUser.type == "business") {
         await setReviewsForBusinessUser(currentUser.user)
     } else if (currentUser.type == "customer") {
@@ -61,7 +62,7 @@ async function getFullProfileData() {
     await setUsers();
 }
 
-async function changeReviewFilterProfile(element){
+async function changeReviewFilterProfile(element) {
     currentReviewOrdering = element.value;
 
     if (currentUser.type == "business") {
@@ -78,7 +79,7 @@ async function changeReviewFilterProfile(element){
 
 async function changeOrderStatus(status, orderId) {
     let singleOrderIndex = currentOrders.findIndex(item => item.id === orderId)
-    if (singleOrderIndex >=0 && currentOrders[singleOrderIndex].status != status) {
+    if (singleOrderIndex >= 0 && currentOrders[singleOrderIndex].status != status) {
         let resp = await updateOrder(orderId, status);
         console.log(resp);
         if (resp.ok) {
@@ -111,6 +112,7 @@ async function updateBusinessProfile(formData) {
         currentUser = userResp.data;
         closeDialog('business_dialog');
         document.getElementById("business_profile").innerHTML = getBusinessProfileTemplate(currentUser);
+        setHeader();
     } else {
         extractErrorMessages(resp.data)
         showToastMessage(true, extractErrorMessages(resp.data))
@@ -133,8 +135,9 @@ async function customerEditOnsubmit(event) {
     console.log(data);
 
     let formData = jsonToFormData(data);
-
+    
     updateCustomerProfile(formData)
+    
 }
 
 async function updateCustomerProfile(formData) {
@@ -150,7 +153,7 @@ async function updateCustomerProfile(formData) {
         currentUser = userResp.data;
         closeDialog('customer_dialog');
         document.getElementById("customer_profile").innerHTML = getCustomerProfileTemplate();
-    }else {
+    } else {
         extractErrorMessages(resp.data)
         showToastMessage(true, extractErrorMessages(resp.data))
     }

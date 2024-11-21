@@ -30,6 +30,7 @@
     <script src="./shared/scripts/header.js"></script>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/offer_list.js"></script>
 </head>
 
 <body onload="setHeader(); indexInit()" onclick="closeAllOpenedElements()">
@@ -44,18 +45,18 @@
     <main>
 
         <div class="pad_m">
-            <section class="section_group landingheader_box d_flex_cc_gm f_d_c">
+            <section class="section_group landingheader_box d_flex_cc_gm f_d_c" id="index_section">
                 <img class="person_img" src="./assets/img/landingpage/person_1.png" alt="" srcset="">
                 <img class="person_img" src="./assets/img/landingpage/person_2.png" alt="" srcset="">
                 <img class="person_img" src="./assets/img/landingpage/person_3.png" alt="" srcset="">
                 <img class="person_img" src="./assets/img/landingpage/person_4.png" alt="" srcset="">
                 <h1 class="font_white_color">Finde professionelle IT-Talente für dein Unternehmen</h1>
-                <div class="searchbar w_full">
+                <!-- <div class="searchbar w_full">
                     <input id="index_search_field" placeholder="Wonach suchst du?" type="text">
                     <button class="d_flex_cc_gm" onclick="redirectToOfferListWSearch()">
                         <img src="./assets/icons/search.svg" alt="">
                     </button>
-                </div>
+                </div> -->
             </section>
         </div>
         <section class="section_group profile_stats pad_l">
