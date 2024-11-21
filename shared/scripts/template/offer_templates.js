@@ -66,7 +66,7 @@ function getOfferTemplate(offer){
                 <div onclick="redirectToOffer(${offer.id})" class="offer_card d_flex_cs_gm f_d_c">
                     <img class="offer_image" src="${getOfferImgPath(offer.image)}" alt="Angebotsbild">
                     <div class="d_flex_cs_gm f_d_c">
-                        <h3>${offer.title}</h3>
+                        <h3 class="text_ellipsis">${offer.title}</h3>
                         <p>${offer.description}</p>
                         <p>${getUpdateOrCreateDate(offer)}</p>
                         <div class="d_flex_cs_gm f_d_c">
