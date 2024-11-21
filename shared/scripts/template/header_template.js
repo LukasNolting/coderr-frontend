@@ -8,7 +8,7 @@ function getLogedInHeaderTemplate() {
 
 function getLogedOutHeaderTemplate() {
     const currentUrl = window.location.href;
-    
+
     if (currentUrl.endsWith('login.html')) {
         return `
         <div class="d_flex_cc_gm">

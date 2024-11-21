@@ -148,28 +148,30 @@ function getBusinessOrderTemplate(order) {
                                     ${getOrderFeatureListTemplate(order.features)}
                                     </ul>
                                 </div>
+                                <hr>
                             </div>
+                            
                         </li>
     `
 }
 
-function getOrderFeatureListTemplate(features){
+function getOrderFeatureListTemplate(features) {
     if (!Array.isArray(features) || features.length === 0) {
         return `<li>Keine Features verfügbar.</li>`;
     }
-    
+
     let featureList = "";
-    
+
     features.forEach(feature => {
         featureList += `<li>${feature}</li>`
     });
     return featureList
 }
 
-function getOrderRevisionTemplate(revisions){
-    if(revisions == 0){
+function getOrderRevisionTemplate(revisions) {
+    if (revisions == 0) {
         return 'Unbegrenzte'
-    } else if(revisions == 1) {
+    } else if (revisions == 1) {
         return revisions
     } else {
         return revisions
@@ -248,7 +250,7 @@ function getBusinessDialogFormTemplate() {
                             class="d_flex_cc_gl btn_round_l btn_edit abs_pos_edit_btn_m">
                             <img src="./assets/icons/close_black.svg" alt="">
                         </button>
-                        <h2 class="font_prime_color">Profil editieren</h2>
+                        <h2 class="font_prime_color p_top_s">Profil editieren</h2>
                         <div class="image_input_box">
                             <img id="business_profile_img_input_output" class="profile_img_l" src="${getPersonImgPath(currentUser.file)}" alt="Aktuelles Profilbild">
                             <div onclick="clickFileInput('business_profile_img_input')"

@@ -89,7 +89,7 @@ main {
 
 
 
-.d_flex_cs_gm,
+
 .d_flex_cc_gm,
 .d_flex_cs_gl,
 .d_flex_cc_gl,
@@ -97,6 +97,11 @@ main {
 .d_flex_cc_gxl {
     display: flex;
     justify-content: center;
+}
+
+
+.d_flex_cs_gm{
+    display: flex;
 }
 
 .d_flex_ss_gm,
@@ -190,4 +195,13 @@ main {
 
 .rotate_half{
     transform: rotate(180deg);
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .p_top_s {
+        padding-top: 36px;
+    }
+
 }

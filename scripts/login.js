@@ -3,7 +3,6 @@ function checkAuthLogin() {
         window.location.href = "./index.html";
     }
     setHeader()
-    activateSuccess()
 }
 
 function logInSubmit(event) {

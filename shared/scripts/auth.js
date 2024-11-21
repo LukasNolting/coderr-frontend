@@ -24,8 +24,6 @@ async function registration(data) {
         showToastMessage(true, errorArr)
     } else {
         successRegistration();
-        // setAuthCredentials(response.data.token, response.data.user_id, response.data.username)
-        // window.location.href = "./offer_list.html"
     }
 }
 
