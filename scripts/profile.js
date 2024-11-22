@@ -153,6 +153,7 @@ async function updateCustomerProfile(formData) {
         currentUser = userResp.data;
         closeDialog('customer_dialog');
         document.getElementById("customer_profile").innerHTML = getCustomerProfileTemplate();
+        setHeader();
     } else {
         extractErrorMessages(resp.data)
         showToastMessage(true, extractErrorMessages(resp.data))
