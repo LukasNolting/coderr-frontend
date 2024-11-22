@@ -1,5 +1,3 @@
-
-
 function getBusinessProfilePageTemplate(currentUser, currentOrders, currentOffers, currentReviews) {
     return `
                     <section id="business" class="business_section section_group d_flex_cs_gxl ">

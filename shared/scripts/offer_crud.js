@@ -46,7 +46,6 @@ async function setSingleOfferDetail() {
   }
 }
 
-
 async function setOfferDetails() {
   for (let i = 0; i < currentOffers.length; i++) {
     const offer = currentOffers[i];
@@ -82,7 +81,6 @@ function openOfferDialog(id = null) {
       details: singleOffer.details
     }
   }
-
   openDialog('dialog_add_edit_offer');
   document.getElementById('dialog_add_edit_offer').innerHTML = getOfferDialogTemplate();
 }
@@ -133,7 +131,6 @@ async function editOfferSubmit(form) {
 
   if (validateEmptyFields(form, data)) {
     let cleanData = buildJsonFromFormInput(data);
-
     let respPatch = await patchDataWoFiles(OFFER_URL + currentOfferId + "/", cleanData);
     let changedOffer = currentOffers.find(item => item.id === currentOfferId)
 
@@ -178,7 +175,6 @@ function addNewFeature(inputFieldId, offer_type) {
     ListRef.innerHTML = getOfferDetailFeatureTemplateList(detail);
   }
 }
-
 
 function validateEmptyFields(form, data) {
   errorIds = [];
@@ -333,12 +329,6 @@ function createEmptyOffer() {
   }
 }
 
-
-
-
-
-// Feature CRUD
-
 function isInEdit(id) {
   return openedEditFeaturefields.some(item => item.id === id);
 }
@@ -370,7 +360,6 @@ function saveEditFeature(id, indexFeature, offer_type) {
 function deleteEditFeature(id, featureIndex, offer_type) {
   const indexFeature = openedEditFeaturefields.findIndex(item => item.id === id);
   const removedObject = openedEditFeaturefields.splice(indexFeature, 1)[0];
-
   const detail = currentOffer.details.find(detail => detail.offer_type === offer_type);
   detail.features.splice(featureIndex, 1);
   reRenderFeatureList(offer_type)
@@ -379,7 +368,6 @@ function deleteEditFeature(id, featureIndex, offer_type) {
 
 function openEditFeature(id, offer_type, indexFeature) {
   const detail = currentOffer.details.find(detail => detail.offer_type === offer_type);
-
 
   openedEditFeaturefields.push(
     {
@@ -393,7 +381,6 @@ function openEditFeature(id, offer_type, indexFeature) {
 
 function reRenderFeatureList(offer_type) {
   const detail = currentOffer.details.find(detail => detail.offer_type === offer_type);
-
   let ListRef = document.getElementById(`offer_feature_list_${detail.offer_type}`)
   ListRef.innerHTML = getOfferDetailFeatureTemplateList(detail);
 }

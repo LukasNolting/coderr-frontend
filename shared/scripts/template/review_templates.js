@@ -42,7 +42,6 @@ function getReviewWLinkTemplate(review, business_user, reviewer) {
     `
 }
 
-
 function getReviewWLinkEditableTemplateList(reviews) {
     if (!Array.isArray(reviews)) {
         return '<p>Fehler beim Laden der Bewertungen</p>';
@@ -61,8 +60,6 @@ function getReviewWLinkEditableTemplateList(reviews) {
 
     return reviewListHTML;
 }
-
-
 
 function getReviewEditableTemplate(review, business_user, reviewer) {
     if (!review || typeof review !== 'object' || !reviewer || typeof reviewer !== 'object' || !business_user || typeof business_user !== 'object') {
@@ -94,7 +91,6 @@ function getReviewEditableTemplate(review, business_user, reviewer) {
                     </div>
     `
 }
-
 
 function getReviewDialogformTemplate(review) {
     if (!review || typeof review !== 'object' ) {
@@ -130,9 +126,6 @@ function getReviewDialogformTemplate(review) {
     `
 }
 
-
-// Utilities
-
 function getStarsEditTemplate(count) {
     if (!count ) {
         return `
@@ -150,7 +143,6 @@ function getStarsEditTemplate(count) {
     }
     return starsHTML;
 }
-
 
 function getStarsTemplate(count) {
     if (!count ) {

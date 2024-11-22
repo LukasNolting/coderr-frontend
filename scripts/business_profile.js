@@ -34,7 +34,6 @@ async function initBProfile() {
     }
 }
 
-
 async function loadRenderBusinessBaseInfo() {
     let resp = await setSingleOfferCompletedCount(currentBusinessUser.user);
     if (resp.ok) {
@@ -65,8 +64,6 @@ async function loadBusinessUser() {
         }
     }
 }
-
-
 
 async function loadRenderBusinessReviews() {
     await setReviewsForBusinessUser(currentBusinessUser.user);

@@ -12,7 +12,6 @@ function forgotPasswordSubmit(event) {
   forgotPasswordSubmit(data);
 }
 
-
 async function onSubmit(event) {
   event.preventDefault();
   let email = document.getElementById('email').value;
