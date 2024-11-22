@@ -90,6 +90,10 @@ h1{
     max-width: 1440px;
 }
 
+.w_80{
+    max-width: 80vw;
+}
+
 @media only screen and (min-width: 1024px) and (max-width: 1124px) {
     .landingheader_box {
         height: 500px;
