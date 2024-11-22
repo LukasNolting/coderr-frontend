@@ -5,7 +5,6 @@ let currentBusinessOfferListFilter = {
     page: 1,
 }
 
-
 async function init() {
     let response = await setCurrentUser();
 
@@ -52,7 +51,6 @@ async function getFullProfileData() {
     } else if (currentUser.type == "customer") {
         await setReviewsForCustomerUser(currentUser.user)
     }
-
 
     let orderResp = await getData(ORDER_URL);
     if (orderResp.ok) {
@@ -118,9 +116,6 @@ async function updateBusinessProfile(formData) {
         showToastMessage(true, extractErrorMessages(resp.data))
     }
 }
-
-
-
 
 // Customer sepcific
 

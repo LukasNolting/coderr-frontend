@@ -19,7 +19,6 @@ async function indexInit() {
     
 }
 
-
 async function getBaseInfo() {
     let response = await getData(BASE_INFO_URL);
     if (response.ok) {

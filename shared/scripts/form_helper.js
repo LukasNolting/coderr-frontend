@@ -7,7 +7,6 @@ function clickFileInput(id) {
     fileInput.click();
 }
 
-
 async function changeCurrentFiles(element) {
     if (element.files.length > 0) {
         currentFile = element.files[0];
@@ -28,13 +27,11 @@ async function changeCurrentFiles(element) {
     }
 }
 
-
 function getFormData(form) {
     const formData = new FormData(form);
 
     return Object.fromEntries(formData.entries());
 }
-
 
 function showFormErrors(idArr) {
     idArr.forEach(id => {

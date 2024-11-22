@@ -5,8 +5,6 @@ function setAuthCredentials(token, userId, username) {
   localStorage.setItem('auth-user-id', userId);
 }
 
-
-
 function removeAuthCredentials() {
   localStorage.removeItem('auth-token');
   localStorage.removeItem('auth-user');
@@ -24,7 +22,6 @@ function getAuthUser() {
 function getAuthUserId() {
   return localStorage.getItem('auth-user-id');
 }
-
 
 function jsonToFormData(json) {
   const formData = new FormData();
@@ -44,7 +41,6 @@ function jsonToFormData(json) {
   return formData;
 };
 
-
 function createHeaders() {
   const headers = {};
 
@@ -55,7 +51,6 @@ function createHeaders() {
 
   return headers;
 }
-
 
 async function getData(endpoint) {
   if (!endpoint) {

@@ -29,13 +29,10 @@ function getsingleOfferHeaderTemplate() {
     `
 }
 
-
 function getSingleOfferDetailTemplate() {
     if (!currentOpenedDetail) {
         return `<div>Es ist ein Fehler aufgetreten</div>`;
     }
-
-
     return `
         <h3 class="font_prime_color">${currentOpenedDetail.price} €</h3>
                         <h3>${currentOpenedDetail.title}</h3>

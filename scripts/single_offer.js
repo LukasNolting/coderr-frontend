@@ -62,8 +62,6 @@ async function loadSingleOfferUser(profileId) {
   }
 }
 
-// ReviewDialog Handling
-
 async function loadRenderSingleOfferReviews() {
   await setUsers();
   await setReviewsForBusinessUser(currentSingleOfferUser.user);
@@ -97,7 +95,6 @@ async function onSubmitReviewSingleOffer() {
   }
 }
 
-
 async function singleOfferOrderCreate() {
   let orderResp = await createOrder(currentOpenedDetail.id);
   if (orderResp.ok) {
@@ -106,8 +103,6 @@ async function singleOfferOrderCreate() {
 
   }
 }
-
-// UI Handling
 
 window.addEventListener("resize", moveOnResize);
 window.addEventListener("load", moveOnResize);

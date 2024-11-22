@@ -50,7 +50,6 @@ function getCustomerProfilePageTemplate() {
     `
 }
 
-
 function getCustomerProfileTemplate() {
     if (!currentUser) {
         return `
@@ -95,8 +94,6 @@ function getCustomerProfileTemplate() {
                 </div>
     `
 }
-
-
 
 function getCustomerDialogTemplate() {
     return `

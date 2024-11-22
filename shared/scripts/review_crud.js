@@ -1,7 +1,6 @@
 let currentReviews = [];
 let currentReviewOrdering = '-updated_at'
 
-
 async function setReviewsForBusinessUser(id) {
     let reviewsResp = await getData(REVIEW_URL + `?business_user_id=${id}&ordering=${currentReviewOrdering}`);
     if (reviewsResp.ok) {
@@ -50,7 +49,6 @@ function openReviewEditDialog(reviewId) {
 
 function openReviewDeleteDialog(reviewId) {
     document.getElementById('rating_dialog').innerHTML = getDeleteOrNotTemplate(reviewId)
-
 }
 
 async function onReviewSubmit(event, reviewId) {
@@ -115,5 +113,4 @@ function meanValueReviews() {
     } else {
         return '-'
     }
-
 }

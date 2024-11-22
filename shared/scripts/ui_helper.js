@@ -29,7 +29,6 @@ function toggleOpen(element) {
     element.setAttribute('open', !isOpen);
 }
 
-
 function toggleOpenId(id) {
     element = document.getElementById(id)
     const isOpen = element.getAttribute('open') === 'true';
@@ -42,8 +41,6 @@ function activateRadio(element) {
         radioInput.checked = true;
     }
 }
-
-
 
 function updateStars(star) {
     const starContainer = star.parentNode;
@@ -78,7 +75,6 @@ function formatDate(dateString) {
     const date = new Date(dateString);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     const formattedDate = date.toLocaleDateString('de-DE', options);
-
     return formattedDate.replace(',', '');
 }
 
@@ -116,7 +112,6 @@ function showToastMessage(error = true, msg = []) {
     }, 2500);
 }
 
-
 function getToastHTML(msg, error) {
     let msglist = "";
     if (msg.length <= 0) {
@@ -152,7 +147,6 @@ function extractErrorMessages(errorObject) {
 
     return errorMessages;
 }
-
 
 function toggleReviewAddBtn() {
     if (currentUser.type == "business") {

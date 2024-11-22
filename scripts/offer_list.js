@@ -37,7 +37,6 @@ async function updateOfferListFilter() {
     renderOfferList()
 }
 
-
 async function updateOfferListFilterMaxDeliveryTime() {
     currentOfferListFilter.max_delivery_time = currentmaxDeliveryTime;
     updateOfferListFilter()
