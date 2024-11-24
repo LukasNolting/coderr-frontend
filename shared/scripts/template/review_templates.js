@@ -53,7 +53,9 @@ function getReviewWLinkEditableTemplateList(reviews) {
 
     reviews.forEach(review => {
         business_user = getUserInfo(review.business_user)
-        reviewer = getUserInfo(review.reviewer)
+        reviewer = getUserInfo(review.reviewer)   
+        
+        
 
         reviewListHTML += getReviewEditableTemplate(review, business_user, reviewer)
     });

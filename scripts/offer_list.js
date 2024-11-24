@@ -33,6 +33,8 @@ async function goToOfferPage(pageNum) {
 
 async function updateOfferListFilter() {
     currentOfferListFilter.ordering = document.getElementById("offer_list_filter_ordering").value;
+    console.log(currentOfferListFilter);
+    
     await setOffersWODetails(currentOfferListFilter);
     renderOfferList()
 }
