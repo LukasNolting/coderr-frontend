@@ -17,17 +17,36 @@ async function setOffers(filterParams = {}) {
 }
 
 async function setOffersWODetails(filterParams = {}) {
-  let offerResp = await getData(OFFER_URL + getOfferFilter(filterParams));
-  if (offerResp.ok) {
-    allOffersLength = offerResp.data.count
-    currentOffers = offerResp.data.results;
+  try {
+    let offerResp = await getData(OFFER_URL + getOfferFilter(filterParams));
+    if (offerResp.ok) {
+      const responseData = offerResp.data;
+      if (responseData.invalid_page) {
+        console.warn("Ungültige Seite erkannt. Automatische Rückkehr zu Seite 1.");
+        filterParams.page = 1;
+        offerResp = await getData(OFFER_URL + getOfferFilter(filterParams));
+        if (offerResp.ok) {
+          const retryData = offerResp.data;
+          allOffersLength = retryData.count;
+          currentOffers = retryData.results;
+          return retryData; 
+        }
+      } else {
+        allOffersLength = responseData.count;
+        currentOffers = responseData.results;
+        return responseData; 
+      }
+    }
+  } catch (error) {
+    console.error("Ein unerwarteter Fehler ist aufgetreten:", error);
   }
-  return offerResp;
 }
 
+
 function getOfferFilter(params = {}) {
-  return `?creator_id=${params?.creator_id ?? ""}&search=${params?.search ?? ""}&ordering=${params?.ordering ?? ""}&page=${params?.page ?? 1}&max_delivery_time=${params?.max_delivery_time ?? ""}`
+  return `?creator_id=${params?.creator_id ?? ""}&search=${params?.search ?? ""}&ordering=${params?.ordering ?? ""}&page=${params?.page ?? 1}&max_delivery_time=${params?.max_delivery_time ?? ""}`;
 }
+
 
 async function setSingleOffer(id) {
   let offerResp = await getData(OFFER_URL + id + "/");
